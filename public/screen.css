@@ -11,6 +11,24 @@ body {
   min-height: 100%;
 }
 
-/* .deck icon
+h1 {
+}
 
-.card in hand icons */
+#card-table {
+}
+
+#draw-pile {
+  border: 0.1rem solid black;
+  height: 3rem;
+}
+
+.visible-hand {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  border: 0.1rem solid black;
+  height: 3rem;
+}
