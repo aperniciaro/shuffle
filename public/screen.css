@@ -15,20 +15,22 @@ h1 {
 }
 
 #card-table {
+  width: 100%;
 }
 
 #draw-pile {
   border: 0.1rem solid black;
-  height: 3rem;
+  height: 4rem;
 }
 
 .visible-hand {
   list-style: none;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 li {
   border: 0.1rem solid black;
-  height: 3rem;
+  height: 4rem;
 }

@@ -19,6 +19,7 @@ let shuffledDeck = []
 
 const reload = () => {
   buildDeck()
+  shuffle()
 }
 
 const buildDeck = () => {
@@ -27,33 +28,25 @@ const buildDeck = () => {
       unshuffledDeck.push(cardValues[cVal] + ' of ' + cardSuits[cSuit])
     }
   }
-  console.log(unshuffledDeck)
+  // console.log(unshuffledDeck)
 }
 
-const shuffle = () => {}
+const shuffle = () => {
+  for (let n = unshuffledDeck.length - 1; n >= 0; n--) {
+    let randInt = Math.floor(Math.random() * n)
+    shuffledDeck.push(unshuffledDeck[randInt])
+    unshuffledDeck.splice(randInt, 1)
+  }
+  console.log(shuffledDeck)
+}
 
-// load page function
-
-//   array of card values
-//   array of suits
-
-//   function with loop concatenating card values and suits and pushing to new array
-
-//   array of cards
-
-//   function randomizing array of cards
-
-//   loop swapping items from array of cards with shuffled array
-
-//   shuffled array
-
-// event click
-
-//   hand array
-
-//   remove top card from shuffled array
-//   add top card to hand array
-
-//   put new hand array item as li in ul in DOM
+const drawCard = () => {
+  const yourCard = document.createElement('li')
+  yourCard.textContent = shuffledDeck[0]
+  document.querySelector('.visible-hand').appendChild(yourCard)
+  shuffledDeck.splice(0, 1)
+  console.log(shuffledDeck)
+}
 
 document.addEventListener('DOMContentLoaded', reload)
+document.querySelector('#draw-pile').addEventListener('click', drawCard)
