@@ -25,6 +25,10 @@ h1 {
   width: 5.5rem;
 }
 
+#empty-deck {
+  display: none;
+}
+
 .visible-hand {
   list-style: none;
   display: flex;
